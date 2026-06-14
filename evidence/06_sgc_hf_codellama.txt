@@ -1,0 +1,20 @@
+Namespace(dataset='huggingface', lm_name='../hf_models/intfloat/e5-large', lm_pool='cls', llm_name='CodeLlama-13b', seed=0, device='cuda:0', use_graph=1, alpha_list=[0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0], measure='distance') 
+
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights:  87%|¨€¨€¨€¨€¨€¨€¨€¨€¨ƒ | 342/391 [00:00<00:00, 3387.36it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 391/391 [00:00<00:00, 3452.80it/s]
+[Model] Number of parameters: 335141888
++-------------+---------------+----------+----------+---------+---------+----------+
+|   Dataset   |      LLM      |    LM    |  Alpha   | Node-F1 | Link-F1 | Accuracy |
++-------------+---------------+----------+----------+---------+---------+----------+
+| huggingface | CodeLlama-13b | e5-large |  Direct  |  0.5755 |  0.2888 |  0.1429  |
+| huggingface | CodeLlama-13b | e5-large |   0.5    |  0.6096 |  0.341  |  0.159   |
+| huggingface | CodeLlama-13b | e5-large |   0.55   |  0.6244 |  0.3618 |  0.1771  |
+| huggingface | CodeLlama-13b | e5-large |   0.6    |  0.6288 |  0.3666 |  0.1811  |
+| huggingface | CodeLlama-13b | e5-large |   0.65   |  0.6483 |  0.3869 |  0.2133  |
+| huggingface | CodeLlama-13b | e5-large |   0.7    |  0.6551 |  0.3944 |  0.2254  |
+| huggingface | CodeLlama-13b | e5-large |   0.75   |  0.6591 |  0.3986 |  0.2334  |
+| huggingface | CodeLlama-13b | e5-large |   0.8    |  0.658  |  0.4021 |  0.2354  |
+| huggingface | CodeLlama-13b | e5-large |   0.85   |  0.6546 |  0.3988 |  0.2314  |
+| huggingface | CodeLlama-13b | e5-large |   0.9    |  0.6435 |  0.3845 |  0.2173  |
+| huggingface | CodeLlama-13b | e5-large |   0.95   |  0.6377 |  0.3802 |  0.2133  |
+| huggingface | CodeLlama-13b | e5-large | No Graph |  0.6338 |  0.3744 |  0.2093  |
++-------------+---------------+----------+----------+---------+---------+----------+

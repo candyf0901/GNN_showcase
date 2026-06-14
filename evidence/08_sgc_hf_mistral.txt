@@ -1,0 +1,20 @@
+Namespace(dataset='huggingface', lm_name='../hf_models/intfloat/e5-large', lm_pool='cls', llm_name='Mistral-7b', seed=0, device='cuda:0', use_graph=1, alpha_list=[0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0], measure='distance') 
+
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 391/391 [00:00<00:00, 4134.54it/s]
+[Model] Number of parameters: 335141888
++-------------+------------+----------+----------+---------+---------+----------+
+|   Dataset   |    LLM     |    LM    |  Alpha   | Node-F1 | Link-F1 | Accuracy |
++-------------+------------+----------+----------+---------+---------+----------+
+| huggingface | Mistral-7b | e5-large |  Direct  |  0.606  |  0.3023 |  0.1636  |
+| huggingface | Mistral-7b | e5-large |   0.5    |  0.6082 |  0.3301 |  0.1534  |
+| huggingface | Mistral-7b | e5-large |   0.55   |  0.6145 |  0.3402 |  0.1656  |
+| huggingface | Mistral-7b | e5-large |   0.6    |   0.62  |  0.3475 |  0.1738  |
+| huggingface | Mistral-7b | e5-large |   0.65   |  0.6372 |  0.366  |  0.2004  |
+| huggingface | Mistral-7b | e5-large |   0.7    |  0.6453 |  0.3839 |  0.2168  |
+| huggingface | Mistral-7b | e5-large |   0.75   |  0.6457 |  0.3826 |  0.2209  |
+| huggingface | Mistral-7b | e5-large |   0.8    |  0.6437 |  0.379  |  0.2229  |
+| huggingface | Mistral-7b | e5-large |   0.85   |  0.6425 |  0.3804 |  0.2209  |
+| huggingface | Mistral-7b | e5-large |   0.9    |  0.6299 |  0.3633 |  0.2045  |
+| huggingface | Mistral-7b | e5-large |   0.95   |  0.6226 |  0.3618 |  0.1984  |
+| huggingface | Mistral-7b | e5-large | No Graph |  0.6143 |  0.356  |  0.1943  |
++-------------+------------+----------+----------+---------+---------+----------+

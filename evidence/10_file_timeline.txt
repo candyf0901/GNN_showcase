@@ -1,0 +1,29 @@
+====================================================================================================
+  文件操作时间线
+====================================================================================================
+时间                   文件                                                 大小           说明
+----------------------------------------------------------------------------------------------------
+2026-06-11 00:04     data\huggingface\graph_desc.json                   31.7KB       数据集
+2026-06-11 00:04     data\huggingface\user_requests.json                1.8MB        数据集
+2026-06-11 00:04     data\huggingface\tool_desc.json                    7.7KB        数据集
+2026-06-11 00:04     data\huggingface\data.json                         9.0MB        数据集
+2026-06-11 00:04     prediction\multimedia\CodeLlama-13b\direct.json    552.1KB      作者提供的预计算结果
+2026-06-11 00:04     prediction\multimedia\Mistral-7b\direct.json       619.5KB      作者提供的预计算结果
+2026-06-11 00:04     prediction\huggingface\Mistral-7b\direct.json      581.6KB      作者提供的预计算结果
+2026-06-11 00:04     prediction\huggingface\CodeLlama-13b\direct.json   536.5KB      作者提供的预计算结果
+2026-06-11 00:41     hf_models\intfloat\e5-large\config.json            0B           e5模型开始下载
+2026-06-11 00:54     hf_models\intfloat\e5-large\model.safetensors      1278.5MB     e5模型下载完成
+2026-06-11 22:00     trainfree\sgc.py                                   8.4KB        修改后的SGC代码
+2026-06-11 22:52     showcase\index.html                                26.8KB       展示文件
+2026-06-12 00:07     showcase\paper_guide.md                            39.4KB       展示文件
+2026-06-12 01:08     showcase\experiment2_sgc_detail.md                 16.5KB       展示文件
+2026-06-13 00:46     showcase/evidence/01_system_info.txt               491B         系统信息
+2026-06-13 00:46     showcase/evidence/02_nvidia_smi.txt                1.8KB        系统信息
+2026-06-13 00:47     showcase/evidence/03_evaluate_hf_codellama.txt     594B         评估实验运行记录
+2026-06-13 00:47     showcase/evidence/04_evaluate_mm_codellama.txt     578B         评估实验运行记录
+2026-06-13 00:47     showcase/evidence/05_evaluate_hf_mistral.txt       571B         评估实验运行记录
+2026-06-13 00:50     showcase/evidence/06_sgc_hf_codellama.txt          1.8KB        SGC实验运行记录
+2026-06-13 00:54     showcase/evidence/07_sgc_mm_codellama.txt          1.7KB        SGC实验运行记录
+2026-06-13 00:58     showcase/evidence/08_sgc_hf_mistral.txt            1.7KB        SGC实验运行记录
+2026-06-13 01:02     showcase/evidence/09_sgc_mm_mistral.txt            1.7KB        SGC实验运行记录
+2026-06-13 01:02     showcase/evidence/10_file_timeline.txt             0B           系统信息

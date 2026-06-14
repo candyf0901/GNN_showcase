@@ -1,0 +1,20 @@
+Namespace(dataset='multimedia', lm_name='../hf_models/intfloat/e5-large', lm_pool='cls', llm_name='CodeLlama-13b', seed=0, device='cuda:0', use_graph=1, alpha_list=[0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0], measure='distance') 
+
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 391/391 [00:00<00:00, 9512.44it/s]
+[Model] Number of parameters: 335141888
++------------+---------------+----------+----------+---------+---------+----------+
+|  Dataset   |      LLM      |    LM    |  Alpha   | Node-F1 | Link-F1 | Accuracy |
++------------+---------------+----------+----------+---------+---------+----------+
+| multimedia | CodeLlama-13b | e5-large |  Direct  |  0.6857 |  0.4179 |  0.241   |
+| multimedia | CodeLlama-13b | e5-large |   0.5    |  0.712  |  0.4997 |  0.3193  |
+| multimedia | CodeLlama-13b | e5-large |   0.55   |  0.7165 |  0.5097 |  0.3333  |
+| multimedia | CodeLlama-13b | e5-large |   0.6    |  0.7255 |  0.5207 |  0.3494  |
+| multimedia | CodeLlama-13b | e5-large |   0.65   |  0.7291 |  0.5275 |  0.3594  |
+| multimedia | CodeLlama-13b | e5-large |   0.7    |  0.7332 |  0.5328 |  0.3675  |
+| multimedia | CodeLlama-13b | e5-large |   0.75   |  0.7335 |  0.5308 |  0.3655  |
+| multimedia | CodeLlama-13b | e5-large |   0.8    |  0.7356 |  0.5336 |  0.3675  |
+| multimedia | CodeLlama-13b | e5-large |   0.85   |  0.7382 |  0.5366 |  0.3715  |
+| multimedia | CodeLlama-13b | e5-large |   0.9    |  0.7361 |  0.535  |  0.3695  |
+| multimedia | CodeLlama-13b | e5-large |   0.95   |  0.7345 |  0.5323 |  0.3675  |
+| multimedia | CodeLlama-13b | e5-large | No Graph |  0.7338 |  0.5301 |  0.3675  |
++------------+---------------+----------+----------+---------+---------+----------+

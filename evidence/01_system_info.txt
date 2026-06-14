@@ -1,0 +1,11 @@
+============================================================
+SYSTEM INFORMATION
+============================================================
+Python:       3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+PyTorch:      2.11.0+cu128
+CUDA avail:   True
+GPU:          NVIDIA GeForce RTX 5060 Laptop GPU
+Capability:   (12, 0)
+CUDA vers:    12.8
+Platform:     Windows-11-10.0.26200-SP0
+Processor:    Intel64 Family 6 Model 183 Stepping 1, GenuineIntel

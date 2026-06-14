@@ -1,0 +1,20 @@
+Namespace(dataset='multimedia', lm_name='../hf_models/intfloat/e5-large', lm_pool='cls', llm_name='Mistral-7b', seed=0, device='cuda:0', use_graph=1, alpha_list=[0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0], measure='distance') 
+
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 391/391 [00:00<00:00, 5040.97it/s]
+[Model] Number of parameters: 335141888
++------------+------------+----------+----------+---------+---------+----------+
+|  Dataset   |    LLM     |    LM    |  Alpha   | Node-F1 | Link-F1 | Accuracy |
++------------+------------+----------+----------+---------+---------+----------+
+| multimedia | Mistral-7b | e5-large |  Direct  |  0.6983 |  0.3985 |  0.2505  |
+| multimedia | Mistral-7b | e5-large |   0.5    |  0.7128 |  0.4629 |  0.2834  |
+| multimedia | Mistral-7b | e5-large |   0.55   |  0.7232 |  0.479  |  0.2977  |
+| multimedia | Mistral-7b | e5-large |   0.6    |  0.7362 |  0.4946 |  0.3183  |
+| multimedia | Mistral-7b | e5-large |   0.65   |  0.7381 |  0.4965 |  0.3285  |
+| multimedia | Mistral-7b | e5-large |   0.7    |  0.7407 |  0.499  |  0.3368  |
+| multimedia | Mistral-7b | e5-large |   0.75   |  0.7385 |  0.4973 |  0.3326  |
+| multimedia | Mistral-7b | e5-large |   0.8    |  0.7358 |  0.4935 |  0.3244  |
+| multimedia | Mistral-7b | e5-large |   0.85   |  0.7265 |  0.4868 |  0.3203  |
+| multimedia | Mistral-7b | e5-large |   0.9    |  0.7243 |  0.4865 |  0.3203  |
+| multimedia | Mistral-7b | e5-large |   0.95   |  0.7181 |  0.4798 |  0.3183  |
+| multimedia | Mistral-7b | e5-large | No Graph |  0.7184 |  0.4781 |  0.3162  |
++------------+------------+----------+----------+---------+---------+----------+
