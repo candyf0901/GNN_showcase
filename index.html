@@ -412,6 +412,40 @@
   .tag-local { background: #d4edda; color: #155724; }
   .tag-model { background: #fff3cd; color: #856404; }
 
+  /* Screenshot gallery */
+  .screenshot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 25px 0;
+  }
+  .screenshot-item {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    background: #fafafa;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+  }
+  .screenshot-item:hover { transform: scale(1.01); }
+  .screenshot-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: zoom-in;
+  }
+  .screenshot-item .caption {
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    background: white;
+    border-top: 1px solid #eee;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .screenshot-grid { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 768px) {
     .hero h1 { font-size: 1.5rem; }
     .pipeline-compare { grid-template-columns: 1fr; }
@@ -817,6 +851,26 @@
       </p>
     </div>
 
+    <div class="insight-box" style="margin-top:30px;">
+      <strong>💬 为什么选这篇论文？</strong><br><br>
+      选这篇不是因为它是热门方向，而是我觉得它的切入角度很有意思。大家都在用 prompt engineering 让 LLM 做规划，
+      但这篇论文换了一个思路——它不从 LLM 本身下手，而是问了一个问题：
+      <strong>LLM 不擅长规划，是不是因为它天生就不适合处理"图"这种结构？</strong>
+      然后用理论证明了确实如此，再提出用 GNN 来弥补这个缺陷。我觉得这种"找到根因再对症下药"的思路很漂亮。<br><br>
+
+      <strong>🔬 复现后发现：</strong><br><br>
+      实际跑下来发现，效果比我想象中还要明显。LLM 的 Link-F1 只有 28.88%，加了一层简单的 SGC 图传播就直接拉到 40.21%，
+      提升了将近 40%。而且这个方法完全不需要训练，不增加推理成本，直接拿来用就能提升。
+      这说明<strong>图结构信息和 LLM 的语言理解能力确实是互补的</strong>——
+      LLM 理解"用户要什么"，GNN 理解"工具之间怎么连"，各司其职。<br><br>
+
+      <strong>🚀 未来可以继续做的方向：</strong><br><br>
+      这次复现的是训练无关的 SGC 版本。论文里还提到训练后的 GraphSAGE 效果更好，但需要标注数据。
+      我觉得之后可以往<strong>少样本或弱监督的方向</strong>继续探索——如何在只有少量标注数据的情况下，
+      也能训练出有效的图增强规划模型。另外，论文的实验主要集中在 HuggingFace 这类 API 调用场景，
+      这个方法能不能推广到更开放的真实世界任务规划（比如机器人控制、工作流自动化），也是值得继续跟进的方向。
+    </div>
+
   </div>
 </section>
 
@@ -927,19 +981,47 @@
       </div>
     </div>
 
-    <h3 style="margin:25px 0 10px;">📅 操作时间线</h3>
-    <p>以下时间线记录了从克隆仓库到完成所有实验的实际操作过程：</p>
+    <h3 style="margin:25px 0 10px;">📅 操作记录与截图</h3>
+    <p>以下是完整操作过程的终端截图：</p>
     <ul class="timeline-list">
-      <li><span class="time">2026-06-11 00:04</span> 克隆 GitHub 仓库<span class="tag tag-author">作者代码</span></li>
-      <li><span class="time">2026-06-11 00:41</span> 开始通过 ModelScope 下载 e5-large 模型 (1.3GB)<span class="tag tag-model">模型下载</span></li>
-      <li><span class="time">2026-06-11 00:54</span> e5-large 模型下载完成<span class="tag tag-model">模型下载</span></li>
-      <li><span class="time">2026-06-11 22:00</span> 修改 sgc.py 适配本地模型路径<span class="tag tag-local">代码修改</span></li>
-      <li><span class="time">2026-06-11 22:03</span> 安装 CUDA 版 PyTorch (2.11.0+cu128)<span class="tag tag-local">环境配置</span></li>
-      <li><span class="time">2026-06-11 22:05</span> 运行 evaluate.py — 验证评估指标<span class="tag tag-local">实验运行</span></li>
-      <li><span class="time">2026-06-11 22:10</span> 运行 sgc.py — 完成全部4组 SGC 对比实验<span class="tag tag-local">实验运行</span></li>
-      <li><span class="time">2026-06-11 22:52</span> 创建展示网页 showcase/index.html<span class="tag tag-local">展示制作</span></li>
-      <li><span class="time">2026-06-13</span> 重新运行所有实验，收集终端输出证据<span class="tag tag-local">证据收集</span></li>
+      <li>克隆 GitHub 仓库<span class="tag tag-author">作者代码</span></li>
+      <li>通过 ModelScope 下载 e5-large 模型 (1.3GB)<span class="tag tag-model">模型下载</span></li>
+      <li>e5-large 模型下载完成<span class="tag tag-model">模型下载</span></li>
+      <li>修改 sgc.py 适配本地模型路径<span class="tag tag-local">代码修改</span></li>
+      <li>安装 CUDA 版 PyTorch (2.11.0+cu128)<span class="tag tag-local">环境配置</span></li>
+      <li>运行 evaluate.py — 验证评估指标<span class="tag tag-local">实验运行</span></li>
+      <li>运行 sgc.py — 完成全部4组 SGC 对比实验<span class="tag tag-local">实验运行</span></li>
+      <li>创建展示网页及相关文档<span class="tag tag-local">展示制作</span></li>
+      <li>重新运行所有实验并截图，收集复现证据<span class="tag tag-local">证据收集</span></li>
     </ul>
+
+    <!-- 6张操作截图 -->
+    <div class="screenshot-grid">
+      <div class="screenshot-item">
+        <img src="images/screenshot_20260615225841.png" alt="系统环境信息" onclick="this.requestFullscreen?.()">
+        <div class="caption">① 系统环境信息<br><small>nvidia-smi / Python / PyTorch 版本</small></div>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screenshot_20260615230719.png" alt="运行 evaluate.py" onclick="this.requestFullscreen?.()">
+        <div class="caption">② 运行 evaluate.py<br><small>评估 LLM 直接推理效果</small></div>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screenshot_20260615234122.png" alt="SGC 模型加载" onclick="this.requestFullscreen?.()">
+        <div class="caption">③ SGC 加载 e5-large 模型<br><small>335M 参数加载到 GPU</small></div>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screenshot_20260615235151.png" alt="SGC 结果表格1" onclick="this.requestFullscreen?.()">
+        <div class="caption">④ SGC 对比结果（HuggingFace）<br><small>Direct vs SGC 指标对比</small></div>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screenshot_20260615235639.png" alt="SGC 结果表格2" onclick="this.requestFullscreen?.()">
+        <div class="caption">⑤ SGC 对比结果（Multimedia）<br><small>另一数据集的对比</small></div>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screenshot_20260615235956.png" alt="完整实验输出" onclick="this.requestFullscreen?.()">
+        <div class="caption">⑥ 完整实验输出<br><small>验证结论</small></div>
+      </div>
+    </div>
 
     <div class="insight-box" style="margin-top:25px;">
       <strong>✅ 验证结论：</strong>
