@@ -464,7 +464,7 @@
   <h1>Can Graph Learning Improve Planning in LLM-based Agents?</h1>
   <p class="subtitle">论文复现展示 · Reproduced Results</p>
   <span class="venue">论文 · 2024/2025</span><br>
-  <span class="reproduced-tag">✅ 已复现 · 4组实验全部通过</span>
+  <span class="reproduced-tag">[通过] 已复现 · 4组实验全部通过</span>
 </section>
 
 <!-- ========== OVERVIEW ========== -->
@@ -551,19 +551,17 @@
 
     <div class="method-diagram">
       <div class="method-step">
-        <div class="icon">📝</div>
         <h3>① LLM 初步预测</h3>
         <p>LLM 直接生成工具序列<br>（Direct Prediction）</p>
       </div>
       <div class="method-arrow">→</div>
       <div class="method-step">
-        <div class="icon">🔷</div>
         <h3>② 图传播（SGC）</h3>
         <p>在工具关系图上传播<br>邻居工具信息</p>
       </div>
       <div class="method-arrow">→</div>
       <div class="method-step">
-        <div class="icon">✅</div>
+        <div class="icon">[通过]</div>
         <h3>③ 重排序</h3>
         <p>Greedy Selection<br>得到优化后的工具链</p>
       </div>
@@ -575,7 +573,7 @@
     </p>
 
     <div class="insight-box">
-      <strong>💡 核心直觉：</strong>
+      <strong>核心直觉：</strong>
       如果两个工具在图上经常被一起使用（如 Automatic Speech Recognition → Question Answering），
       图传播会让它们的编码更相似，帮助LLM选择正确的后续工具。
     </div>
@@ -587,7 +585,7 @@
   <div class="container">
     <div class="section-title"><span class="num">4</span> 复现结果 · Reproduced Results</div>
 
-    <h3 style="margin-bottom:10px; font-size:1.05rem;">📋 HuggingFace 数据集</h3>
+    <h3 style="margin-bottom:10px; font-size:1.05rem;">HuggingFace 数据集</h3>
     <div class="table-wrap">
       <table>
         <thead>
@@ -635,7 +633,7 @@
       </table>
     </div>
 
-    <h3 style="margin:25px 0 10px; font-size:1.05rem;">📋 Multimedia 数据集</h3>
+    <h3 style="margin:25px 0 10px; font-size:1.05rem;">Multimedia 数据集</h3>
     <div class="table-wrap">
       <table>
         <thead>
@@ -694,7 +692,7 @@
     </div>
 
     <div class="insight-box">
-      <strong>🔑 关键发现：</strong>
+      <strong> 关键发现：</strong>
       <ul style="margin:8px 0 0 20px;">
         <li><strong>SGC 在所有 4 个组合上都一致提升</strong>了 Node-F1、Link-F1 和 Accuracy</li>
         <li><strong>Link-F1（连接预测）提升最大</strong>——这正好是 LLM 最薄弱的环节</li>
@@ -711,7 +709,7 @@
     <p>一个具体例子展示 LLM 直接预测如何犯错，以及图学习如何修正。</p>
 
     <div class="case-box">
-      <div class="case-header">🎯 用户请求</div>
+      <div class="case-header">用户请求</div>
       <div class="case-body">
         <div class="case-request">
           "I have a noisy audio recording, example.wav, of a meeting, and I want to find out what was said about a particular topic, 'market strategy'. Please enhance the audio first."
@@ -719,7 +717,7 @@
 
         <div class="pipeline-compare">
           <div class="pipeline-col gt">
-            <h4>✅ Ground Truth</h4>
+            <h4>[通过] Ground Truth</h4>
             <div>
               <span class="pipeline-node">Audio-to-Audio<br><small>(降噪)</small></span>
             </div>
@@ -734,13 +732,13 @@
           </div>
 
           <div class="pipeline-col direct">
-            <h4>❌ Direct (LLM)</h4>
+            <h4>[错误] Direct (LLM)</h4>
             <div>
               <span class="pipeline-node">Automatic Speech<br>Recognition</span>
             </div>
             <div class="pipeline-arrow">→</div>
             <div>
-              <span class="pipeline-node pipeline-wrong">Text-to-Speech<br><small style="color:#E17055;">✗ 不应该出现</small></span>
+              <span class="pipeline-node pipeline-wrong">Text-to-Speech<br><small style="color:#E17055;"> 不应该出现</small></span>
             </div>
             <div class="pipeline-arrow">→</div>
             <div>
@@ -749,7 +747,7 @@
           </div>
 
           <div class="pipeline-col sgc">
-            <h4>✅ SGC (图增强)</h4>
+            <h4>[通过] SGC (图增强)</h4>
             <div>
               <span class="pipeline-node">Audio-to-Audio<br><small>(降噪)</small></span>
             </div>
@@ -793,7 +791,7 @@
           <tr><td>Direct</td><td>0.5755</td><td>0.2888</td><td>0.1429</td><td>基线</td></tr>
           <tr><td>0.50</td><td>0.6096</td><td>0.3410</td><td>0.1590</td><td></td></tr>
           <tr><td>0.65</td><td>0.6483</td><td>0.3869</td><td>0.2133</td><td></td></tr>
-          <tr class="best"><td><strong>0.80</strong></td><td><strong>0.6580</strong></td><td><strong>0.4021</strong></td><td><strong>0.2354</strong></td><td>🏆 最佳</td></tr>
+          <tr class="best"><td><strong>0.80</strong></td><td><strong>0.6580</strong></td><td><strong>0.4021</strong></td><td><strong>0.2354</strong></td><td>[最佳]</td></tr>
           <tr><td>1.00 (No Graph)</td><td>0.6338</td><td>0.3744</td><td>0.2093</td><td></td></tr>
         </tbody>
       </table>
@@ -813,7 +811,7 @@
 
     <div class="card-grid">
       <div class="stat-card">
-        <div class="value" style="font-size:1.6rem;">✅ 4/4</div>
+        <div class="value" style="font-size:1.6rem;">[通过] 4/4</div>
         <div class="label">所有实验组合均提升</div>
       </div>
       <div class="stat-card">
@@ -847,24 +845,24 @@
         复现环境：Python 3.12 · PyTorch 2.11 + CUDA 12.8 · RTX 5060 · e5-large
       </p>
       <p style="font-size:0.82rem; color:var(--text-light); margin-top:5px;">
-        📁 双击 <code>demo.bat</code> 可重新运行完整实验
+         双击 <code>demo.bat</code> 可重新运行完整实验
       </p>
     </div>
 
     <div class="insight-box" style="margin-top:30px;">
-      <strong>💬 为什么选这篇论文？</strong><br><br>
+      <strong> 为什么选这篇论文？</strong><br><br>
       选这篇不是因为它是热门方向，而是我觉得它的切入角度很有意思。大家都在用 prompt engineering 让 LLM 做规划，
       但这篇论文换了一个思路——它不从 LLM 本身下手，而是问了一个问题：
       <strong>LLM 不擅长规划，是不是因为它天生就不适合处理"图"这种结构？</strong>
       然后用理论证明了确实如此，再提出用 GNN 来弥补这个缺陷。我觉得这种"找到根因再对症下药"的思路很漂亮。<br><br>
 
-      <strong>🔬 复现后发现：</strong><br><br>
+      <strong>复现后发现：</strong><br><br>
       实际跑下来发现，效果比我想象中还要明显。LLM 的 Link-F1 只有 28.88%，加了一层简单的 SGC 图传播就直接拉到 40.21%，
       提升了将近 40%。而且这个方法完全不需要训练，不增加推理成本，直接拿来用就能提升。
       这说明<strong>图结构信息和 LLM 的语言理解能力确实是互补的</strong>——
       LLM 理解"用户要什么"，GNN 理解"工具之间怎么连"，各司其职。<br><br>
 
-      <strong>🚀 未来可以继续做的方向：</strong><br><br>
+      <strong>未来可以继续做的方向：</strong><br><br>
       这次复现的是训练无关的 SGC 版本。论文里还提到训练后的 GraphSAGE 效果更好，但需要标注数据。
       我觉得之后可以往<strong>少样本或弱监督的方向</strong>继续探索——如何在只有少量标注数据的情况下，
       也能训练出有效的图增强规划模型。另外，论文的实验主要集中在 HuggingFace 这类 API 调用场景，
@@ -883,7 +881,7 @@
       所有命令均在本地终端执行，结果实时打印，未经任何修改。
     </p>
 
-    <h3 style="margin:25px 0 10px;">🖥️ 系统环境</h3>
+    <h3 style="margin:25px 0 10px;">系统环境</h3>
     <div class="terminal-block">
       <span class="prompt">$</span><span class="output"> python -c "import torch; print(torch.__version__)"</span><br>
       <span class="output">2.11.0+cu128</span><br>
@@ -896,7 +894,7 @@
       <span class="comment"># 操作系统: Windows 11</span>
     </div>
 
-    <h3 style="margin:25px 0 10px;">📋 实验一终端输出：评估 LLM 直接推理</h3>
+    <h3 style="margin:25px 0 10px;">实验一终端输出：评估 LLM 直接推理</h3>
     <p>运行命令：<code>.venv\Scripts\python evaluate.py --dataset=huggingface --llm=CodeLlama-13b --method=direct</code></p>
     <div class="terminal-block">
       <span class="prompt">E:\GNN4TaskPlan&gt;</span><span class="output">.venv\Scripts\python evaluate.py --dataset=huggingface --llm=CodeLlama-13b --method=direct</span><br>
@@ -911,7 +909,7 @@
       <span class="comment"># 验证: LLM 直接推理效果确实不佳 (Node-F1=0.58, Link-F1=0.29, Acc=14%)</span>
     </div>
 
-    <h3 style="margin:25px 0 10px;">🧪 实验二终端输出：SGC 图增强</h3>
+    <h3 style="margin:25px 0 10px;">实验二终端输出：SGC 图增强</h3>
     <p>运行命令：<code>.venv\Scripts\python trainfree\sgc.py --dataset=huggingface --llm_name=CodeLlama-13b --lm_name=../hf_models/intfloat/e5-large --use_graph=1 --device=cuda:0</code></p>
     <div class="terminal-block">
       <span class="prompt">E:\GNN4TaskPlan\trainfree&gt;</span><span class="output">python sgc.py --dataset=huggingface --llm_name=CodeLlama-13b --device=cuda:0</span><br>
@@ -931,7 +929,7 @@
       <span class="comment"># 验证: SGC 图传播后 Link-F1 从 0.2888 → 0.4021 (↑39%)，Accuracy 从 0.1429 → 0.2354 (↑65%)</span>
     </div>
 
-    <h3 style="margin:25px 0 10px;">📊 论文结果 vs 本地复现结果对比</h3>
+    <h3 style="margin:25px 0 10px;">论文结果 vs 本地复现结果对比</h3>
     <div class="verify-compare">
       <div class="verify-table-wrap">
         <table>
@@ -943,37 +941,37 @@
               <td><strong>Direct</strong> Node-F1</td>
               <td>57.55</td>
               <td><strong>57.55</strong></td>
-              <td><span class="verify-badge match">✅ 完全一致</span></td>
+              <td><span class="verify-badge match">[通过] 完全一致</span></td>
             </tr>
             <tr>
               <td><strong>Direct</strong> Link-F1</td>
               <td>28.88</td>
               <td><strong>28.88</strong></td>
-              <td><span class="verify-badge match">✅ 完全一致</span></td>
+              <td><span class="verify-badge match">[通过] 完全一致</span></td>
             </tr>
             <tr>
               <td><strong>Direct</strong> Accuracy</td>
               <td>14.29</td>
               <td><strong>14.29</strong></td>
-              <td><span class="verify-badge match">✅ 完全一致</span></td>
+              <td><span class="verify-badge match">[通过] 完全一致</span></td>
             </tr>
             <tr>
               <td><strong>SGC</strong> Node-F1 (最佳)</td>
               <td>65.51</td>
               <td><strong>65.80</strong></td>
-              <td><span class="verify-badge close">✅ 基本一致</span></td>
+              <td><span class="verify-badge close">[通过] 基本一致</span></td>
             </tr>
             <tr>
               <td><strong>SGC</strong> Link-F1 (最佳)</td>
               <td>39.44</td>
               <td><strong>40.21</strong></td>
-              <td><span class="verify-badge close">✅ 基本一致</span></td>
+              <td><span class="verify-badge close">[通过] 基本一致</span></td>
             </tr>
           </tbody>
         </table>
       </div>
       <div style="font-size:0.88rem; color:var(--text-light); padding:15px; background:#f8f9ff; border-radius:12px;">
-        <strong>🔍 差异说明：</strong><br><br>
+        <strong>差异说明：</strong><br><br>
         SGC 结果的小差异是因为 α 参数取值间隔不同导致的。<br><br>
         论文报告的是其搜索到的最佳 α 值的结果，而我们遍历了 11 个 α 值 (0.5~1.0)。
         本地测得的最佳 α=0.80，结果与论文在同一水平，甚至略优。<br><br>
@@ -981,7 +979,7 @@
       </div>
     </div>
 
-    <h3 style="margin:25px 0 10px;">📅 操作记录与截图</h3>
+    <h3 style="margin:25px 0 10px;">操作记录与截图</h3>
     <p>以下是完整操作过程的终端截图：</p>
     <ul class="timeline-list">
       <li>克隆 GitHub 仓库<span class="tag tag-author">作者代码</span></li>
@@ -1024,7 +1022,7 @@
     </div>
 
     <div class="insight-box" style="margin-top:25px;">
-      <strong>✅ 验证结论：</strong>
+      <strong>[通过] 验证结论：</strong>
       所有实验均在本机（<strong>NVIDIA GeForce RTX 5060</strong>，<strong>Windows 11</strong>，<strong>Python 3.12</strong>，<strong>PyTorch 2.11+cu128</strong>）上实际运行，
       结果与论文原文一致。<br><br>
       复现过程完全透明：<strong>双击 <code>demo.bat</code></strong> 即可在本机重新演示完整实验流程。
